@@ -156,7 +156,7 @@ module VagrantPlugins
           @logger.info("Time to instance ready: #{env[:metrics]["instance_ready_time"]}")
 
           # Allocate and associate an elastic IP if requested
-          if elastic_ip
+          if config.elastic_ip
             domain = subnet_id ? 'vpc' : 'standard'
             do_elastic_ip(env, domain, server)
           end
